@@ -36,11 +36,11 @@ extend key str =
 
 
 sub x =
-    x - (Char.toCode 'a')
+    x - (Char.toCode 'A')
 
 
 ad x =
-    x - (Char.toCode 'a')
+    x - (Char.toCode 'A')
 
 
 longKeyEncrypt key text =

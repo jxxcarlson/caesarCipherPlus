@@ -114,7 +114,7 @@ view model =
             ]
         , p
             [ style
-                [ ( "width", "210px" )
+                [ ( "width", "350px" )
                 , ( "height", "32px" )
                 , ( "font-size", "12pt" )
                 , ( "padding", "4px" )
@@ -122,5 +122,5 @@ view model =
                 , ( "color", "white" )
                 ]
             ]
-            [ text "Enter a word in 'Plain text' and a string in 'key'" ]
+            [ text "Enter text in 'Plain text' and a string in 'key'. Use ALL CAPS plus spaces and punctuation for plain text. Use all caps for key" ]
         ]
