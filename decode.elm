@@ -1,4 +1,4 @@
-module Main exposing (..)
+module Decode exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -42,7 +42,7 @@ update msg model =
             { model | plainText = plainText, cipherText = longKeyEncrypt model.key plainText }
 
         Key key ->
-            { model | cipherText = longKeyEncrypt key model.plainText, key = key }
+            { model | cipherText = longKeyDecrypt key model.plainText, key = key }
 
 
 
@@ -66,7 +66,7 @@ view model =
                 , ( "padding-bottom", "20px" )
                 ]
             ]
-            [ text "Caesar cipher +" ]
+            [ text "Caesar cipher + (Decode)" ]
         , div []
             [ input
                 [ type_ "text"
@@ -75,7 +75,7 @@ view model =
                     , ( "font-family", "monospace" )
                     , ( "font-size", "14pt" )
                     ]
-                , placeholder "Plain text"
+                , placeholder "Encrypted text"
                 , onInput PlainText
                 ]
                 []
@@ -122,5 +122,5 @@ view model =
                 , ( "color", "white" )
                 ]
             ]
-            [ text "Enter text in 'Plain text' and a string in 'key'. Use ALL CAPS plus spaces and punctuation for plain text. Use all caps for key" ]
+            [ text "Enter the encrypted text in 'Encrypted text' and a string in 'key'. Use ALL CAPS for the key" ]
         ]
